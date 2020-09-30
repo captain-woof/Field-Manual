@@ -4,3 +4,4 @@ Here, you'll find articles that can get you started on Git and Github if you do 
 
 **SOURCES:**
 - 1-4 are taken from [OpenSource.com](http://opensource.com)]
+- 5 is taken from [Koskila.net](https://www.koskila.net/how-to-git-merge-upstream/)
