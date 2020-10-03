@@ -15,10 +15,12 @@ Now, let's say that you want to test only the filename parameter to see if it's 
 
 ## Understanding the Test-Runs:
 With the test case in mind, now think how some sample runs might look like. You won't fuzz the Command name itself, you'd just fuzz the parameter, yes? Some sample runs might very well be:
-`OPEN aaaaaaaaaaaaaaaaa`
-`OPEN 88888888888888888888888888888888888`
-`OPEN ))..1111111111`
+```
+OPEN aaaaaaaaaaaaaaaaa
+OPEN 88888888888888888888888888888888888
+OPEN ))..1111111111
 ...and so on. (BooFuzz handles this for you.)
+```
 
 Observe that in each test run, there is a substring that doesn't change (in other words, it is always Static) - 'OPEN'. There is also a substring that always changes - 'filename' parameter. Also, between the two of them is the delimiting character - a blank space.
 
