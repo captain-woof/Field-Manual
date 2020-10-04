@@ -4,10 +4,14 @@ In this directory, you'll find stuff that may help you get privilege escalation 
 
 ## Checklist
 - In which groups do I belong, and what's my username?
-  `id`
+   ```
+   id
+   ```
 
 - What am I allowed to run as some other user?
-  `sudo -l`
+  ```
+  sudo -l
+  ```
 - What is in the home directory?
   ```
   cd ~
@@ -26,12 +30,20 @@ In this directory, you'll find stuff that may help you get privilege escalation 
   find / -perm -g=s 2>/dev/null
   ```
 - Which files are owned by user 'someuser'?
-  `find / -user someuser`
+  ```
+  find / -user someuser
+  ```
 - Which files belong to 'someuser' group?
-  `find / -group someuser`
+  ```
+  find / -group someuser
+  ```
 - Any backup files?
-  `find / -name "*backup*"`
-  `find / -name "*bak*"`
+  ```
+  find / -name "*backup*"
+  ```
+  ```
+  find / -name "*bak*"
+  ```
 - Any files that contain usernames/passwords?
   ```
   cd /
@@ -39,8 +51,12 @@ In this directory, you'll find stuff that may help you get privilege escalation 
   ```
   *Be creative and add interesting substrings*
 - What processes are running?
-  `ps aux | grep someuser`
+  ```
+  ps aux | grep someuser
+  ```
 - What shared objects (libraries) is a binary using, and can I replace them?
-  `ldd name-of-binary`
+  ```
+  ldd name-of-binary
+  ```
   *Then check for the permissions*
 
