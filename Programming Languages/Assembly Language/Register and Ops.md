@@ -1,14 +1,24 @@
 # Registers and Ops
 
+## For x86:
 ### Available registers:
 - General Purpose:
-  **EAX, EBX, ECX, EDX**
+  **EAX, EBX, ECX, EDX, ESI, EDI**
 - Reserved:
   **ESP** (stack head pointer), **EIP** (pointer to address of next instruction), **EBP** (stack base pointer)
 
   **NOTE: All registers are 4 bytes (32-bits) in size**
 
-### Operations:
+## For x64:
+### Available registers:
+- General Purpose:
+  **RAX, RBX, RCX, RDX, RSI, RDI**
+- Reserved:
+  **RSP** (stack head pointer), **RIP** (pointer to address of next instruction), **RBP** (stack base pointer)
+
+  **NOTE: All registers are 8 bytes (64-bits) in size**
+
+### Operations (x86):
   - ADD:
   `add eax, ebx ; eax+=ebx`
   - SUB:
