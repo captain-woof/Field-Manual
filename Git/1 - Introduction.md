@@ -79,13 +79,6 @@ git add README.md
 
 ## Step 4: Make a commit
 
-Programming and development
-
-* [Red Hat Developers Blog](https://developers.redhat.com/?intcmp=7016000000127cYAAQ&src=programming_resource_menu4)
-* [Programming cheat sheets](https://opensource.com/downloads/cheat-sheets?intcmp=7016000000127cYAAQ)
-* [Try for free: Red Hat Learning Subscription](https://www.redhat.com/en/services/training/learning-subscription?src=programming_resource_menu3)
-* [New Python content](https://opensource.com/tags/python?src=programming_resource_menu1)
-* [Our latest JavaScript articles](https://opensource.com/tags/javascript?src=programming_resource_menu2)
 
 So far you've created a file and told Git about it, and now it's time to create a _commit_. Commit can be thought of as a milestone. Every time you accomplish some work, you can write a Git commit to store that version of your file, so you can go back later and see what it looked like at that point in time. Whenever you make a change to your file, you create a new version of that file, different from the previous one.
 
