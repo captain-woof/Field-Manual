@@ -3,6 +3,7 @@
 **NOTE: Some of the information here have been taken from:**
 
 - [PortSwigger.net](https://portswigger.net/web-security/sql-injection/cheat-sheet)
+- [MySQL Docs](https://dev.mysql.com/doc/refman/8.0/en/information-schema.html)
 
 ### String Concatenation:
 - Oracle 	`'foo'||'bar'`
@@ -24,14 +25,14 @@
 - Oracle 	`--comment`
 - Microsoft
   - `--comment`
-  - `/\*comment*/`
+  - `/*comment*/`
 - PostgreSQL
   - `--comment`
-  - `/\*comment*/`
+  - `/*comment*/`
 - MySQL
   - `#comment`
   - `-- comment` *[Note the space after the double dash]*
-  - `/\*comment*/`
+  - `/*comment*/`
 
 ### Database version
 - Oracle
@@ -55,9 +56,9 @@ You can list the tables that exist in the database, and the columns that those t
   - `SELECT * FROM information_schema.tables`
   - `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'`
 - MySQL
-  **Information (from [here](https://dev.mysql.com/doc/refman/8.0/en/information-schema-tables-table.html)):**
+  **Information:**
 
-    - *'information_schema' is the database that contains all information about all the database, table, column, etc names.*
+    - '**information_schema**' is the database that contains all information about all the database, table, column, etc names.*
 
     - *'**information_schema.tables**' table contain useful columns that show which table belongs to which database (and vice-versa):*
     
