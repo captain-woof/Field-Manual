@@ -56,6 +56,7 @@ You can list the tables that exist in the database, and the columns that those t
   - `SELECT * FROM information_schema.tables`
   - `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'`
 - MySQL
+
 **Information:**
 
     - '**information_schema**' is the database that contains all information about all the database, table, column, etc names.*
@@ -77,7 +78,7 @@ You can list the tables that exist in the database, and the columns that those t
   **Queries:**
 
   - `SELECT * FROM information_schema.tables`
-  - SELECT * FROM `information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'`
+  - `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'`
 
 ### Conditional errors
 
