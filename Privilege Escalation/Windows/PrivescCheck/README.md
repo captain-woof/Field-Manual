@@ -23,6 +23,11 @@ PS C:\Temp\> . .\PrivescCheck.ps1; Invoke-PrivescCheck
 ```
 
 ### Features
+- **All below mentioned checks**
+```
+Invoke-PrivescCheck - Does all the checks
+```
+
 - **Current User**
 ```
 Invoke-UserCheck - Gets the usernane and SID of the current user
