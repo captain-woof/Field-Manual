@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#" class="jetpack-lazy-images-js-enabled" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>iptables: a simple cheatsheet | Andrea Fortuna</title>
+<link rel="dns-prefetch" href="https://pixel.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://rtb.openx.net/">
+<link rel="dns-prefetch" href="https://pixel.quantserve.com/">
+<link rel="dns-prefetch" href="https://pm.w55c.net/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://stats.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://www.gstatic.com/">
+<link rel="dns-prefetch" href="https://adservice.google.com/">
+<link rel="dns-prefetch" href="https://adservice.google.it/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.andreafortuna.org/xmlrpc.php">
+
+<meta name="description" content="Whether you're a novice user or a system administrator, #iptables is a mandatory #knowledge! #linux #networking">
+<meta name="keywords" content="cheatsheet,iptables,linux">
+<script src="iptables:%20a%20simple%20cheatsheet_files/reactive_library_fy2019.js"></script><script src="iptables:%20a%20simple%20cheatsheet_files/cookie.js"></script><script src="iptables:%20a%20simple%20cheatsheet_files/osd.js"></script><script src="iptables:%20a%20simple%20cheatsheet_files/show_ads_impl_fy2019.js" id="google_shimpl"></script><script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.andreafortuna.org/#organization","url":"https://www.andreafortuna.org/","name":"Andrea Fortuna","sameAs":[]},{"@type":"WebSite","@id":"https://www.andreafortuna.org/#website","url":"https://www.andreafortuna.org/","name":"Andrea Fortuna","publisher":{"@id":"https://www.andreafortuna.org/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.andreafortuna.org/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#webpage","url":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/","inLanguage":"en-US","name":"iptables: a simple cheatsheet","isPartOf":{"@id":"https://www.andreafortuna.org/#website"},"breadcrumb":{"@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#breadcrumblist"},"description":"Whether you’re a novice user or a system administrator, #iptables is a mandatory #knowledge!\n\n#linux #networking","image":{"@type":"ImageObject","@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#primaryimage","url":"https://i0.wp.com/www.andreafortuna.org/wp-content/uploads/2019/02/origin-100250487-e1551263766852.jpg?fit=1024%2C315&ssl=1","width":1024,"height":315},"primaryImageOfPage":{"@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#primaryimage"},"datePublished":"2019-05-08T08:00:31+02:00","dateModified":"2019-05-08T10:05:15+02:00"},{"@type":"Article","@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#article","isPartOf":{"@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#webpage"},"author":{"@id":"https://www.andreafortuna.org/author/admin/#author"},"headline":"iptables: a simple cheatsheet","datePublished":"2019-05-08T08:00:31+02:00","dateModified":"2019-05-08T10:05:15+02:00","commentCount":1,"mainEntityOfPage":{"@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#webpage"},"publisher":{"@id":"https://www.andreafortuna.org/#organization"},"articleSection":"Linux, cheatsheet, iptables, linux","image":{"@type":"ImageObject","@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#primaryimage","url":"https://i0.wp.com/www.andreafortuna.org/wp-content/uploads/2019/02/origin-100250487-e1551263766852.jpg?fit=1024%2C315&ssl=1","width":1024,"height":315}},{"@type":"Person","@id":"https://www.andreafortuna.org/author/admin/#author","name":"Andrea Fortuna","sameAs":[]},{"@type":"BreadcrumbList","@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.andreafortuna.org/","url":"https://www.andreafortuna.org/","name":"Andrea Fortuna"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/","url":"https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/","name":"iptables: a simple cheatsheet"}}]}]}</script>
+<link rel="canonical" href="https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iptables: a simple cheatsheet | Andrea Fortuna">
+<meta property="og:description" content="Whether you're a novice user or a system administrator, #iptables is a mandatory #knowledge! #linux #networking">
+<meta property="og:url" content="https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/">
+<meta property="og:site_name" content="So Long, and Thanks for All the Fish">
+<meta property="og:image" content="https://i0.wp.com/www.andreafortuna.org/wp-content/uploads/2019/02/origin-100250487-e1551263766852.jpg?fit=1024%2C315&amp;ssl=1">
+<meta property="fb:admins" content="100037230166318">
+<meta property="fb:app_id" content="2364289947217602">
+<meta property="article:tag" content="cheatsheet">
+<meta property="article:tag" content="iptables">
+<meta property="article:tag" content="linux">
+<meta property="article:published_time" content="2019-05-08T08:00:31Z">
+<meta property="article:modified_time" content="2019-05-08T10:05:15Z">
+<meta property="og:image:secure_url" content="https://i0.wp.com/www.andreafortuna.org/wp-content/uploads/2019/02/origin-100250487-e1551263766852.jpg?fit=1024%2C315&amp;ssl=1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@andreafortunatw">
+<meta name="twitter:domain" content="andreafortuna.org">
+<meta name="twitter:title" content="iptables: a simple cheatsheet | Andrea Fortuna">
+<meta name="twitter:description" content="Whether you're a novice user or a system administrator, #iptables is a mandatory #knowledge! #linux #networking">
+<meta name="twitter:image" content="https://i0.wp.com/www.andreafortuna.org/wp-content/uploads/2019/02/origin-100250487-e1551263766852.jpg?fit=1024%2C315&amp;ssl=1">
+
+<link rel="alternate" type="application/rss+xml" title="Andrea Fortuna » Feed" href="https://www.andreafortuna.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="Andrea Fortuna » Comments Feed" href="https://www.andreafortuna.org/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Andrea Fortuna » iptables: a simple cheatsheet Comments Feed" href="https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="iptables:%20a%20simple%20cheatsheet_files/style_002.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="cookie-notice-front-css" href="iptables:%20a%20simple%20cheatsheet_files/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="less-style-css" href="iptables:%20a%20simple%20cheatsheet_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="iptables:%20a%20simple%20cheatsheet_files/jetpack.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://www.andreafortuna.org/wp-json/"><link rel="alternate" type="application/json" href="https://www.andreafortuna.org/wp-json/wp/v2/posts/5827"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.andreafortuna.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.andreafortuna.org/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="My Weekly RoundUp #91" href="https://www.andreafortuna.org/2019/05/06/my-weekly-roundup-91/">
+<link rel="next" title="The history of the world according to cats" href="https://www.andreafortuna.org/2019/05/10/the-history-of-the-world-according-to-cats/">
+<meta name="generator" content="WordPress 5.5.1">
+<link rel="shortlink" href="https://www.andreafortuna.org/?p=5827">
+<link rel="alternate" type="application/json+oembed" href="https://www.andreafortuna.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.andreafortuna.org%2F2019%2F05%2F08%2Fiptables-a-simple-cheatsheet%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.andreafortuna.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.andreafortuna.org%2F2019%2F05%2F08%2Fiptables-a-simple-cheatsheet%2F&amp;format=xml">
+<style type="text/css">img#wpstats{display:none}</style> <style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+<link rel="amphtml" href="https://www.andreafortuna.org/2019/05/08/iptables-a-simple-cheatsheet/amp/"><link rel="icon" href="https://i2.wp.com/www.andreafortuna.org/wp-content/uploads/2018/02/cropped-glyph-2.jpeg?fit=32%2C32&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i2.wp.com/www.andreafortuna.org/wp-content/uploads/2018/02/cropped-glyph-2.jpeg?fit=192%2C192&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon" href="https://i2.wp.com/www.andreafortuna.org/wp-content/uploads/2018/02/cropped-glyph-2.jpeg?fit=180%2C180&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i2.wp.com/www.andreafortuna.org/wp-content/uploads/2018/02/cropped-glyph-2.jpeg?fit=270%2C270&amp;ssl=1">
+<script data-ad-client="ca-pub-9618060664237110" async="" src="iptables:%20a%20simple%20cheatsheet_files/adsbygoogle.js" data-checked-head="true"></script>
+<link rel="preload" href="iptables:%20a%20simple%20cheatsheet_files/integrator_002.js" as="script"><script type="text/javascript" src="iptables:%20a%20simple%20cheatsheet_files/integrator_002.js"></script><link rel="preload" href="iptables:%20a%20simple%20cheatsheet_files/integrator.js" as="script"><script type="text/javascript" src="iptables:%20a%20simple%20cheatsheet_files/integrator.js"></script></head>
+<body class="post-template-default single single-post postid-5827 single-format-standard cookies-set cookies-accepted">
+<header id="masthead" class="site-header" role="banner">
+<div class="container">
+<hgroup>
+<h1 class="site-title"><a href="https://www.andreafortuna.org/" title="Andrea Fortuna" rel="home">Andrea Fortuna</a> <br> <span>Just some random thoughts about the Meaning of Life, The Universe, and Everything</span></h1>
+</hgroup>
+<nav role="navigation" class="site-navigation main-navigation">
+<div class="menu-primary-menu-container"><ul id="menu-primary-menu" class="menu"><li id="menu-item-2537" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2537"><a href="https://www.andreafortuna.org/">Home</a></li>
+<li id="menu-item-2538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2538"><a href="https://www.andreafortuna.org/about/">About</a></li>
+<li id="menu-item-9646" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9646"><a href="https://www.andreafortuna.org/category/cybersecurity/">Cybersecurity</a></li>
+<li id="menu-item-10945" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10945"><a href="https://www.andreafortuna.org/category/lifestyle/music/">Music</a></li>
+<li id="menu-item-9648" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-9648"><a href="https://www.andreafortuna.org/category/technology/">Technology</a></li>
+<li id="menu-item-9649" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9649"><a href="https://www.andreafortuna.org/category/tldr/">TLDR</a></li>
+<li id="menu-item-9650" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9650"><a href="https://www.andreafortuna.org/category/weekly-roundup/">Weekly RoundUp</a></li>
+</ul></div> </nav>
+<div class="clear"></div>
+</div>
+</header>
+<div class="container" style="height: auto !important;">
+<div id="primary" style="height: auto !important;">
+<div id="content" role="main" style="height: auto !important;">
+<article class="post" style="height: auto !important;">
+<h1 class="title">iptables: a simple cheatsheet</h1>
+<div class="post-meta">
+<span class="entry-date">May 8, 2019</span>
+</div>
+<div class="the-content" style="height: auto !important;">
+<p>Whether you’re a novice user or a system administrator, iptables is a mandatory knowledge!</p>
+<span id="more-5827"></span>
+<p><strong>iptables </strong>is the userspace command line program used to configure the Linux 2.4.x and later packet filtering ruleset.<br>When a connection tries to establish itself on your system, iptables looks for a rule in its list to match it to. <br>If it doesn’t find one, it resorts to the default action.</p>
+<h3>How it works</h3>
+<p>iptables uses three different chains to allow or block traffic: <strong>input</strong>, <strong>output </strong>and <strong>forward</strong></p>
+<ul><li><strong>Input </strong>– This chain is used to control the behavior for incoming connections. </li><li><strong>Output </strong>– This chain is used for outgoing connections.</li><li><strong>Forward</strong> – This chain is used for incoming connections that aren’t actually being delivered locally like routing and NATing.</li></ul>
+<h3> Let’s start to configure rules </h3>
+<p>By default all chains are configured to the accept rule, so during 
+the hardening process the suggestion is to start with a deny all 
+configuration and then open only needed ports:</p>
+<pre class="wp-block-code"><code>iptables --policy INPUT DROP
+iptables --policy OUTPUT DROP
+iptables --policy FORWARD DROP</code></pre>
+<hr class="wp-block-separator">
+<h3>Display rules</h3>
+<h4>Verbose print out <strong>all active iptables rules</strong></h4>
+<pre class="wp-block-code"><code># iptables -n -L -v</code></pre>
+<p>…same output with line numbers:</p>
+<pre class="wp-block-code"><code># iptables -n -L -v --line-numbers</code></pre>
+<p>Finally, same data output but related to INPUT/OUTPUT chains:</p>
+<pre class="wp-block-code"><code># iptables -L INPUT -n -viptables -L OUTPUT -n -v --line-numbers</code></pre>
+<h4><strong>List Rules as for a specific chain</strong></h4>
+<pre class="wp-block-code"><code># iptables -L INPUT</code></pre>
+<p>same data with rules specifications:</p>
+<pre class="wp-block-code"><code># iptables -S INPUT</code></pre>
+<p>rules list with packet count</p>
+<pre class="wp-block-code"><code># iptables -L INPUT -v</code></pre>
+<hr class="wp-block-separator">
+<h3>Delete/Insert rules</h3>
+<h4><strong>Delete Rule by Chain and Number</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -D INPUT 10</code></pre>
+<h4><strong>Delete Rule by Specification</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -D INPUT -m conntrack --ctstate INVALID -j DROP</code></pre>
+<h4><strong>Flush All Rules, Delete All Chains, and Accept All</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -P INPUT ACCEPT
+# iptables -P FORWARD ACCEPT
+# iptables -P OUTPUT ACCEPT
+# iptables -t nat -F
+# iptables -t mangle -F
+# iptables -F
+# iptables -X</code></pre>
+<h4><strong>Flush All Chains</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -F</code></pre>
+<h4><strong>Flush a Single Chain</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -F INPUT</code></pre>
+<h4><strong>Insert Rule</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -I INPUT 2 -s 202.54.1.2 -j DROP</code></pre>
+<hr class="wp-block-separator">
+<h2>Rules examples</h2>
+<h4><strong>Allow Loopback Connections</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i lo -j ACCEPTiptables -A OUTPUT -o lo -j ACCEPT</code></pre>
+<h4><strong>Allow Established and Related Incoming Connections</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT</code></pre>
+<h4><strong>Allow Established Outgoing Connections</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Internal to External</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT</code></pre>
+<h4><strong>Drop Invalid Packets</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -m conntrack --ctstate INVALID -j DROP</code></pre>
+<h4><strong>Block an IP Address</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -s 192.168.1.10 -j DROP</code></pre>
+<h4><strong>Block and IP Address and Reject</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -s 192.168.1.10 -j REJECT</code></pre>
+<h4><strong>Block Connections to a Network Interface</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth0 -s 192.168.1.10 -j DROP</code></pre>
+<h4><strong>Allow All Incoming SSH</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow Incoming SSH from Specific IP address or subnet</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp -s 192.168.1.0/24 --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow Outgoing SSH</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A OUTPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A INPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow Incoming Rsync from Specific IP Address or Subnet</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp -s 192.168.1.0/24 --dport 873 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 873 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow Incoming HTTP</strong></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 80 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow Incoming HTTPS</strong></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 443 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow Incoming HTTP and HTTPS</strong></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp -m multiport --dports 80,443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp -m multiport --dports 80,443 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow MySQL from Specific IP Address or Subnet</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp -s 192.168.1.0/24 --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 3306 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow MySQL to Specific Network Interface</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth1 -p tcp --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -o eth1 -p tcp --sport 3306 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow PostgreSQL from Specific IP Address or Subnet</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp -s 192.168.1.0/24 --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow PostgreSQL to Specific Network Interface</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth1 -p tcp --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -o eth1 -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Block Outgoing SMTP Mail</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A OUTPUT -p tcp --dport 25 -j REJECT</code></pre>
+<h4><strong>Allow All Incoming SMTP</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 25 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 25 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow All Incoming IMAP</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 143 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 143 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow All Incoming IMAPS</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 993 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 993 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow All Incoming POP3</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 110 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 110 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Allow All Incoming POP3S</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport 995 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+# iptables -A OUTPUT -p tcp --sport 995 -m conntrack --ctstate ESTABLISHED -j ACCEPT</code></pre>
+<h4><strong>Drop Private Network Address On Public Interface</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth1 -s 192.168.1.0/24 -j DROP
+# iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</code></pre>
+<h4><strong>Drop All Outgoing to Facebook Networks</strong><br>Get Facebook AS:<br></h4>
+<pre class="wp-block-code"><code># whois -h v4.whois.cymru.com " -v $(host facebook.com | grep "has address" | cut -d " " -f4)" | tail -n1 | awk '{print $1}'</code></pre>
+<p>Drop:<br></p>
+<pre class="wp-block-code"><code># for i in $(whois -h whois.radb.net -- '-i origin AS1273' | grep "^route:" | cut -d ":" -f2 | sed -e 's/^[ \t]*//' | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 | cut -d ":" -f2 | sed 's/$/;/') ; do  iptables -A OUTPUT -s "$i" -j REJECTdone</code></pre>
+<h4><strong>Log and Drop Packets</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j LOG --log-prefix "IP_SPOOF A: "
+# iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</code></pre>
+<p>By default everything is logged to <code>/var/log/messages</code> file:<br></p><div style="width: 100%; height: auto; clear: both; text-align: center;" class="google-auto-placed ap_container"><ins style="display: block; margin: auto; background-color: transparent; height: 280px;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9618060664237110" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:900px;background-color:transparent;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 900px; background-color: transparent; overflow: visible;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:900px;height:280px;" src="iptables:%20a%20simple%20cheatsheet_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CLuEm-bFyesCFXGs7QodwSIN-A" data-load-complete="true" width="900" height="280" frameborder="0"></iframe></ins></ins></ins></div>
+<pre class="wp-block-code"><code># tail -f /var/log/messagesgrep --color 'IP SPOOF' /var/log/messages</code></pre>
+<h4><strong>Log and Drop Packets with Limited Number of Log Entries</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth1 -s 10.0.0.0/8 -m limit --limit 5/m --limit-burst 7 -j LOG --log-prefix "IP_SPOOF A: "
+# iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</code></pre>
+<h4><strong>Drop or Accept Traffic From Mac Address</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -m mac --mac-source 00:0F:EA:91:04:08 -j DROP
+# iptables -A INPUT -p tcp --destination-port 22 -m mac --mac-source 00:0F:EA:91:04:07 -j ACCEPT</code></pre>
+<h4><strong>Block or Allow ICMP Ping Request</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+# iptables -A INPUT -i eth1 -p icmp --icmp-type echo-request -j DROP</code></pre>
+<h4><strong>Specifying Multiple Ports with <code>multiport</code></strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -i eth0 -p tcp -m state --state NEW -m multiport --dports ssh,smtp,http,https -j ACCEPT</code></pre>
+<h4><strong>Load Balancing with <code>random*</code> or <code>nth*</code></strong><br></h4>
+<pre class="wp-block-code"><code>_ips=("172.31.250.10" "172.31.250.11" "172.31.250.12" "172.31.250.13")for ip in "${_ips[@]}" ; do  iptables -A PREROUTING -i eth0 -p tcp --dport 80 -m state --state NEW -m nth --counter 0 --every 4 --packet 0 \    -j DNAT --to-destination ${ip}:80done</code></pre>
+<p>or<br></p>
+<pre class="wp-block-code"><code>_ips=("172.31.250.10" "172.31.250.11" "172.31.250.12" "172.31.250.13")for ip in "${_ips[@]}" ; do  iptables -A PREROUTING -i eth0 -p tcp --dport 80 -m state --state NEW -m random --average 25 \    -j DNAT --to-destination ${ip}:80done</code></pre>
+<h4><strong>Restricting the Number of Connections with <code>limit</code> and <code>iplimit*</code></strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A FORWARD -m state --state NEW -p tcp -m multiport --dport http,https -o eth0 -i eth1 -m limit --limit 20/hour --limit-burst 5 -j ACCEPT</code></pre>
+<p>or<br></p>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp -m state --state NEW --dport http -m iplimit --iplimit-above 5 -j DROP</code></pre>
+<h4><strong>Maintaining a List of recent Connections to Match Against</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A FORWARD -m recent --name portscan --rcheck --seconds 100 -j DROPiptables -A FORWARD -p tcp -i eth0 --dport 443 -m recent --name portscan --set -j DROP</code></pre>
+<h4><strong>Matching Against a <code>string*</code> in a Packet’s Data Payload</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A FORWARD -m string --string '.com' -j DROP
+# iptables -A FORWARD -m string --string '.exe' -j DROP</code></pre>
+<h4><strong>Time-based Rules with <code>time*</code></strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A FORWARD -p tcp -m multiport --dport http,https -o eth0 -i eth1 -m time --timestart 21:30 --timestop 22:30 --days Mon,Tue,Wed,Thu,Fri -j ACCEPT</code></pre>
+<h4><strong>Packet Matching Based on TTL Values</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -s 1.2.3.4 -m ttl --ttl-lt 40 -j REJECT</code></pre>
+<h4><strong>Protection against port scanning</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -N port-scanningiptables -A port-scanning -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s --limit-burst 2 -j RETURNiptables -A port-scanning -j DROP</code></pre>
+<h4><strong>SSH brute-force protection</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -m recent --setiptables -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 10 -j DROP</code></pre>
+<h4><strong>Syn-flood protection</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -N syn_floodiptables -A INPUT -p tcp --syn -j syn_floodiptables -A syn_flood -m limit --limit 1/s --limit-burst 3 -j RETURN
+# iptables -A syn_flood -j DROPiptables -A INPUT -p icmp -m limit --limit  1/s --limit-burst 1 -j ACCEPT
+# iptables -A INPUT -p icmp -m limit --limit 1/s --limit-burst 1 -j LOG --log-prefix PING-DROP:
+# iptables -A INPUT -p icmp -j DROPiptables -A OUTPUT -p icmp -j ACCEPT</code></pre>
+<h4><strong>Mitigating SYN Floods With SYNPROXY</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -t raw -A PREROUTING -p tcp -m tcp --syn -j CT --notrack
+# iptables -A INPUT -p tcp -m tcp -m conntrack --ctstate INVALID,UNTRACKED -j SYNPROXY --sack-perm --timestamp --wscale 7 --mss 1460
+# iptables -A INPUT -m conntrack --ctstate INVALID -j DROP</code></pre>
+<h4><strong>Block New Packets That Are Not SYN</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP</code></pre>
+<p>or<br></p>
+<pre class="wp-block-code"><code># iptables -t mangle -A PREROUTING -p tcp ! --syn -m conntrack --ctstate NEW -j DROP</code></pre>
+<h4><strong>Force Fragments packets check</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -f -j DROP</code></pre>
+<h4><strong>XMAS packets</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP</code></pre>
+<h4><strong>Drop all NULL packets</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP</code></pre>
+<h4><strong>Block Uncommon MSS Values</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j DROP</code></pre>
+<h4><strong>Block Packets With Bogus TCP Flags</strong><br></h4>
+<pre class="wp-block-code"><code># iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN FIN,SYN -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,RST FIN,RST -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,ACK FIN -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,FIN FIN -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL ALL -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL FIN,PSH,URG -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL SYN,FIN,PSH,URG -j DROP
+# iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP</code></pre>
+<h4><strong>Block Packets From Private Subnets (Spoofing)</strong><br></h4>
+<pre class="wp-block-code"><code>_subnets=("224.0.0.0/3" "169.254.0.0/16" "172.16.0.0/12" "192.0.2.0/24" "192.168.0.0/16" "10.0.0.0/8" "0.0.0.0/8" "240.0.0.0/5")for _sub in "${_subnets[@]}" ; do  iptables -t mangle -A PREROUTING -s "$_sub" -j DROPdoneiptables -t mangle -A PREROUTING -s 127.0.0.0/8 ! -i lo -j DROP</code></pre>
+<hr class="wp-block-separator">
+<h3><strong>Saving Rules</strong></h3>
+<p>On Debian Based systems:</p>
+<pre class="wp-block-code"><code># netfilter-persistent save</code></pre>
+<p>On RedHat Based systems</p>
+<pre class="wp-block-code"><code># service iptables save</code></pre>
+<hr class="wp-block-separator">
+<h3>References</h3>
+<ul><li><a href="https://www.netfilter.org/documentation/HOWTO//packet-filtering-HOWTO.html">Linux 2.4 Packet Filtering HOWTO</a></li></ul>
+</div>
+</article>
+<h2>Related posts</h2>
+<ol>
+<li>
+<a rel="external" href="https://www.andreafortuna.org/2020/07/30/cybersecurity-roundup-15/">Cybersecurity Roundup #15</a>
+</li>
+<li>
+<a rel="external" href="https://www.andreafortuna.org/2020/07/29/why-huawei-usb-stick-setup-on-linux-adds-a-strange-huawei-autorun-script-in-system-start/">Why Huawei USB stick setup on linux adds a strange “Huawei Autorun” script in system start?</a>
+</li>
+<li>
+<a rel="external" href="https://www.andreafortuna.org/2020/06/18/linuxcheck-linux-information-gathering-tool/">LinuxCheck: Linux information gathering tool</a>
+</li>
+<li>
+<a rel="external" href="https://www.andreafortuna.org/2020/05/20/quick-mount-of-ios-apps-documents-on-linux-using-ifuse-and-bash/">Quick mount of iOS Apps documents on Linux, using iFuse and bash</a>
+</li>
+<li>
+<a rel="external" href="https://www.andreafortuna.org/2020/04/09/i3-how-to-make-a-pretty-lock-screen-with-a-four-lines-of-bash-script/">i3: how to make a pretty lock screen with a small bash script</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div style="width: 100%; height: auto; clear: both; text-align: center;" class="google-auto-placed"><ins style="display: block; margin: 10px auto; background-color: transparent; height: 280px;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9618060664237110" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;"></ins></ins></ins></div><footer class="site-footer" role="contentinfo">
+<div class="site-info container">
+Proudly developed by <a href="https://www.andreafortuna.org/about/" title="Credits">Andrea Fortuna</a>
+</div>
+</footer>
+<script type="text/javascript" src="iptables:%20a%20simple%20cheatsheet_files/photon.js" id="jetpack-photon-js"></script>
+<script type="text/javascript" id="cookie-notice-front-js-extra">
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/www.andreafortuna.org\/wp-admin\/admin-ajax.php","nonce":"577428a705","hideEffect":"fade","position":"bottom","onScroll":"0","onScrollOffset":"100","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"0","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"1","coronabarActive":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="iptables:%20a%20simple%20cheatsheet_files/front.js" id="cookie-notice-front-js"></script>
+<script type="text/javascript" src="iptables:%20a%20simple%20cheatsheet_files/lazy-images.js" id="jetpack-lazy-images-js"></script>
+<script type="text/javascript" src="iptables:%20a%20simple%20cheatsheet_files/e-202036.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.9',blog:'137844517',post:'5827',tz:'2',srv:'www.andreafortuna.org'} ]);
+	_stq.push([ 'clickTrackerInit', '137844517', '5827' ]);
+</script>
+
+<div id="cookie-notice" role="banner" class="cn-position-bottom cn-effect-fade cookie-notice-hidden cookie-revoke-visible" aria-label="Cookie Notice" style="background-color: rgba(0,0,0,1);"><div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">We
+ use cookies to ensure that we give you the best experience on our 
+website. If you continue to use this site we will assume that you are 
+happy with it.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap button" aria-label="Ok">Ok</a></span><a href="javascript:void(0);" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Ok"></a></div>
+</div>
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" src="iptables:%20a%20simple%20cheatsheet_files/ads_002.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!0" data-load-complete="true" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_6070449780546" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><img src="iptables:%20a%20simple%20cheatsheet_files/g.gif" alt=":)" id="wpstats" width="6" height="5"></body><iframe id="google_esf" name="google_esf" src="iptables:%20a%20simple%20cheatsheet_files/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-9618060664237110"></iframe></html>
