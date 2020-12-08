@@ -129,25 +129,23 @@ Help. Give a (currently very brief) description of the command syntax.
 
 ## Quick examples
 
-- Change the default policy for a chain
-
-  To change the default policy of a chain, run:
+- **To change the default policy of a chain, run:**
   
   `iptables --policy chain_name <ACCEPT/DROP/REJECT>`
 
-- List Entries in iptables
+- **List Entries in iptables**
 
   `iptables -L`
 
-- ACCEPT Connections From a Single IP Address
+- **ACCEPT Connections From a Single IP Address**
 
   `iptables -A INPUT -s 10.10.10.10 -j ACCEPT`
 
-- REJECT INBOUND Connections for an IP on a Specific Port (SSH)
+- **REJECT INBOUND Connections for an IP on a Specific Port (SSH)**
 
   `iptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -j REJECT`
 
-- Saving Changes Made to iptables
+- **Saving Changes Made to iptables**
 
   The changes you made to your iptables rules will not be saved unless it is called explicitly to be saved. The next time the service starts, any unsaved changes will be wiped away. The following are examples on how to save on different platforms
 
@@ -157,21 +155,21 @@ Help. Give a (currently very brief) description of the command syntax.
 
   Others: `/etc/init.d/iptables save`
 
-- Deleting Individual Rules
+- **Deleting Individual Rules**
 
   You can delete rules based on what they're doing:
 
   `iptables -D INPUT -s 127.0.0.1 -p tcp -dport 111 -j ACCEPT `
 
-  You can also delete based on the rule number (use `iptables -L -t table_name chain_name --line-numbers` to get the number on list):
+  **You can also delete based on the rule number (use `iptables -L -t table_name chain_name --line-numbers` to get the number on list):**
 
   `iptables -D INPUT 4`
 
-- Allow Established and Related Incoming Connections
+- **Allow Established and Related Incoming Connections**
 
   `iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT`
 
-- Allow Incoming HTTPS
+- **Allow Incoming HTTPS**
 
   `iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT`
 
