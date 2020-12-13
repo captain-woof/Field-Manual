@@ -31,7 +31,9 @@ Optional arguments:
 ### List of exploits:
 #### LOCAL:
 - **Juicy Potato**
-  - Privileges needed: `SeImpersonatePrivilege` or `SeAssignPrimaryToken`
+  - Privileges needed: `SeImpersonatePrivilege` or `SeAssignPrimaryTokenPrivilege`
+- **Rogue Potato**
+  - Privileges needed: `SeImpersonatePrivilege` or `SeAssignPrimaryTokenPrivilege`
 - **PrintSpoofer**
   - Privileges needed: `SeImpersonatePrivilege`
 - **RogueWinRM**
