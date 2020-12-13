@@ -5,6 +5,8 @@ If you're a member of `lxd` group, you can elevate to root.
 - [Explanation](#user-content-explanation)
 - [The process outline](#user-content-the-process)
 - [The commands](#user-content-the-commands)
+- [Automating the process](#automating-the-process)
+
 ## Explanation:
 From what I understand...
 - LXC (**L**inu**x** **C**ontainer): This is kinda like a virtualised linux environment that can run virtualised systems inside it.
@@ -49,3 +51,9 @@ lxc start default # Starting the virtual device
 lxc exec default /bin/sh # You get a root shell
 id # Check that you're root
 ```
+
+## Automating the process
+
+Use this script:
+[https://www.exploit-db.com/exploits/46978](https://www.exploit-db.com/exploits/46978)
+Modify the script as per your requirements
