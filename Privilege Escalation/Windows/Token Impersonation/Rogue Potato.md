@@ -11,7 +11,7 @@
 [Rogue Potato Releases](https://github.com/antonioCoco/RoguePotato/releases)
 
 ### How it works:
-![The overall process of how this works](https://decoderblogblog.files.wordpress.com/2020/05/flow_graph_2.png?w=1024&h=233)
+![The overall process of how this works](https://decoderblogblog.files.wordpress.com/2020/05/flow_graph_2.png)
 
 ### Prerequisite Privileges needed
 `SeImpersonatePrivilege` or `SeAssignPrimaryTokenPrivilege`
