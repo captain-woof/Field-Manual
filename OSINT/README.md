@@ -21,3 +21,5 @@
  - [EmailRep](https://emailrep.io/)
  - [IntelligenceX](https://intelx.io/)
  - [Trash Panda - Scavenger OSINT Bot](https://twitter.com/leak_scavenger)
+ - [Social Searcher](https://www.social-searcher.com/search-users/)
+ - [OSINT Framework](https://osintframework.com/)
