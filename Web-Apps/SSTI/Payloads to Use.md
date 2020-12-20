@@ -23,6 +23,7 @@
 -   [Jinjava](#jinjava)
 -   [Handlebars](#handlebars)
 -   [ASP.NET Razor](#aspnet-razor)
+-   [Tornado](#tornado)
 
 ## Tools
 
@@ -421,3 +422,15 @@ Fixed by [https://github.com/HubSpot/jinjava/pull/230](https://github.com/HubSpo
     @{
       // C# code
     }
+    
+
+## Tornado
+
+### Detection
+
+`{{7*7}}` will return 49
+
+### Command Execution
+
+`{% SINGLE-LINE-PYTHON-CODE-HERE %}`
+
