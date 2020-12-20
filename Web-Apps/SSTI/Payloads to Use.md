@@ -10,6 +10,8 @@
 **Engines:**
 
 -   [Ruby](#ruby)
+-   [ERB](#erb)
+-   [Slim](#slim)
 -   [Java](#java)
 -   [Expression Language EL](#expression-language-el)
 -   [Twig](#twig)
@@ -41,11 +43,11 @@ Recommended tool: [Tplmap](https://github.com/epinna/tplmap) e.g:
 
 ### Ruby - Basic injections
 
-**ERB:**
+### ERB:
 
     <%= 7 * 7 %>
 
-**Slim:**
+### Slim:
 
     #{ 7 * 7 }
 
