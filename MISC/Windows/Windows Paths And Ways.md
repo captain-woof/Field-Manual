@@ -3,6 +3,7 @@
 ### Table of Contents
 - [Startup Programs](#startup-programs)
 - [Services](#services)
+- [AppInit DLLs](#appinit-dlls)
 
 ### Startup Programs
 ```
@@ -73,3 +74,6 @@ HKLM\SYSTEM\CurrentControlSet\Services\NameOfTheService
     ```
 
   For more, head [here.](https://nssm.cc/commands)
+  
+### AppInit DLLs
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows
