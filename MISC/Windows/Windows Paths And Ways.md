@@ -4,6 +4,7 @@
 - [Startup Programs](#startup-programs)
 - [Services](#services)
 - [AppInit DLLs](#appinit-dlls)
+- [Hosts File](#hosts-file)
 
 ### Startup Programs
 ```
@@ -77,3 +78,6 @@ HKLM\SYSTEM\CurrentControlSet\Services\NameOfTheService
   
 ### AppInit DLLs
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows
+
+### Hosts File
+C:\windows\system32\drivers\etc\hosts
