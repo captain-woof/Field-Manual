@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+#deactivate {
+	width: 300px;
+	font-size: 20;
+	margin: auto;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+#status {
+	width: 300px;
+	font-size: 20;
+	margin: auto;
+	background-color: green;
+	color: white;
+	text-align: center;
+}
+</style>
+<title>Legit website</title>
+</head>
+<body>
+<h1>Account Settings</h1>
+<br/><br/>
+<div id="deactivate">Deactivate account</div>
+</br>
+<div id="status">Active</div>
+<script>
+document.getElementById("deactivate").onclick = () => {
+	alert("Account deactivated!");
+	document.getElementById("status").innerText="Deleted";
+	document.getElementById("status").style.background="red";
+};
+</script>
+</body>
+</html>

