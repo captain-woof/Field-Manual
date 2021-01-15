@@ -6,6 +6,7 @@
 - [AppInit DLLs](#appinit-dlls)
 - [Hosts File](#hosts-file)
 - [UAC](#uac)
+- [WinLogon](#winlogon)
 
 ### Startup Programs
 ```
@@ -45,3 +46,11 @@ HKLM\SYSTEM\CurrentControlSet\Services\NameOfTheService
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
 
 The value of **EnableLua** is 0x1 for UAC enabled, 0x0 for disabled (REG_DWORD)
+
+### WinLogon
+
+` HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon`
+
+`reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /d "Userinit.exe, <PATH_TO_BACKDOOR>" /f`
+
+When a user logs in Userinit.exe will be executed and then our backdoor.
