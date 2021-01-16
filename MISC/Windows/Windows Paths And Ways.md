@@ -8,6 +8,7 @@
 - [UAC](#uac)
 - [WinLogon](#winlogon)
 - [WDigest](#wdigest)
+- [Scheduled Tasks](#scheduled-tasks)
 
 ### Startup Programs
 ```
@@ -61,3 +62,7 @@ When a user logs in Userinit.exe will be executed and then our backdoor.
 `reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1`
 
 Enables WDigest
+
+### Scheduled Tasks
+
+[!Scheduled Tasks](https://drive.google.com/uc?export=download&id=194pD8C6FLlnD4vS4wO8WB9Q-pr5hhftF)
