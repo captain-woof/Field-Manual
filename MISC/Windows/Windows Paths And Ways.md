@@ -65,4 +65,4 @@ Enables WDigest
 
 ### Scheduled Tasks
 
-[!Scheduled Tasks](https://drive.google.com/uc?export=download&id=194pD8C6FLlnD4vS4wO8WB9Q-pr5hhftF)
+![Scheduled Tasks](https://drive.google.com/uc?export=download&id=194pD8C6FLlnD4vS4wO8WB9Q-pr5hhftF)
