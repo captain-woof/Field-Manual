@@ -21,9 +21,14 @@ Upon calling a function, the arguments are pushed on to the stack, followed by p
 
 **Arguments are passed in as data on registers in the order:**
 ```
-rdi -> rsi -> rdx -> r10 -> r8 -> r9
+// For Windows
+rcx -> rdx -> r8 -> r9 (for integer, struct or pointer arguments)
+xmm0 -> xmm1 -> xmm2 -> xmm3 (for floating point)
+
+// For others
+rdi -> rsi -> rdx -> rcx -> r8 -> r9 (for integer, struct or pointer arguments)
+xmm0 -> xmm1 -> xmm2 -> xmm3 -> xmm4 -> xmm5 -> xmm6 -> xmm7 (for floating point)
 ```
-*First argument in rdi, then next arg in rsi, and so on...*
 
 For `func(arg1,arg2...,argn)`, assembly code may look something like:
 ```
