@@ -6,7 +6,7 @@
 openssl req -engine ./lib.so
 ```
 
-**To make the required shared library, compile this code:**
+**To make the required shared library, either use `msfvenom` to generate a shared library malware, or compile this code:**
 
 ```
 #include <unistd.h>
