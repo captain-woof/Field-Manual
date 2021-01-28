@@ -2,7 +2,7 @@
 
 ngrok is a reverse proxy that creates a secure tunnel from a public endpoint to a locally running web service. ngrok captures and analyzes all traffic over the tunnel for later inspection and replay.
 
-### What can I do with ngrok? (From [https://github.com/inconshreveable/ngrok](https://github.com/inconshreveable/ngrok))
+### What can I do with ngrok? (From [github.com/inconshreveable/ngrok](https://github.com/inconshreveable/ngrok))
 
     Expose any http service behind a NAT or firewall to the internet on a subdomain of ngrok.com
     Expose any tcp service behind a NAT or firewall to the internet on a random port of ngrok.com
@@ -11,7 +11,7 @@ ngrok is a reverse proxy that creates a secure tunnel from a public endpoint to 
     
 ### How to setup:
 
-1. Signup at [ngrok.com](ngrok.com)
+1. Signup at [ngrok.com](http://ngrok.com)
 2. Follow the setup instructions shown in your dashboard to set up your auth token
 
 ### How to use:
