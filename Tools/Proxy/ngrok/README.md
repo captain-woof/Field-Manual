@@ -18,22 +18,22 @@ ngrok is a reverse proxy that creates a secure tunnel from a public endpoint to 
 
 - **Expose a local webserver:**
 
-Once you've started a local webserver, fire up ngrok by pointing it to the port where your local server is running:
+	Once you've started a local webserver, fire up ngrok by pointing it to the port where your local server is running:
 
-`./ngrok http 80`
+	`./ngrok http 80`
 
-The output will list a forwarding URL, which will point to your local server. You'll also see any active tunnels listed on the status page.
+	The output will list a forwarding URL, which will point to your local server. You'll also see any active tunnels listed on the status page.
 
 - **SSH to a Raspberry Pi/Any device:**
 
-If you find yourself working with a Raspberry Pi or any similar network-connected device, it's useful to have fast and easy remote access. First, make sure to install ngrok on the device. Next, start a TCP tunnel on the device by listening on any port you choose:
+	If you find yourself working with a Raspberry Pi or any similar network-connected device, it's useful to have fast and easy remote access. First, make sure to install ngrok on the device. Next, start a TCP tunnel on the device by listening on any port you choose:
 
-`./ngrok tcp 22`
+	`./ngrok tcp 22`
 
 - **Expose a TCP based service running on port 1234**
 
-`ngrok tcp 1234`
+	`ngrok tcp 1234`
 
 - **Inspect & replay requests:**
 
-Visit `http://localhost:4040` once you have ngrok running to see live requests on your tunnels. Quickly inspect the headers and responses, or replay a request to speed up your development process.
+	Visit `http://localhost:4040` once you have ngrok running to see live requests on your tunnels. Quickly inspect the headers and responses, or replay a request to speed up your development process.
