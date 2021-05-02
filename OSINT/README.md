@@ -5,6 +5,7 @@
  - [Breached Credentials](#breached-credentials)
  - [Username Hunt](#username-hunt)
  - [Email Reputation](#email-Reputation)
+ - [Website](#website)
  - [Miscellaneous](#miscellaneous)
  
 ### Reverse Image Lookup
@@ -25,6 +26,10 @@
 
 ### Email Reputation
  - [EmailRep](https://emailrep.io/)
+
+### Website
+ - [viewdns.info](https://viewdns.info/) (Whois, reverse whois, location, dns, etc)
+ - [BacklinkWatch](http://backlinkwatch.com/index.php)
 
 ### Miscellaneous
  - [IntelligenceX](https://intelx.io/) (Domain, url, username, etc) 
